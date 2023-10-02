@@ -18,8 +18,11 @@
 
 PRODUCT_RELEASE_NAME := gta4l
 
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+
 # Inherit from twrp product configuration
-$(call inherit-product, vendor/twrp/config/common.mk)
+$(call inherit-product, vendor/pb/config/common.mk)
 
 # Inherit from this device
 $(call inherit-product, device/samsung/gta4l/device.mk)
